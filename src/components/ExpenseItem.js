@@ -2,7 +2,7 @@ import './ExpenseItem.css';
 
 function ExpenseItem(){
   const LocationOfExpenditure="Shopping Mall";
-    return (
+    return (       
         <div className="expense-item">
          <div >December 20 2023</div>
          <div className='expense-item__description'>
