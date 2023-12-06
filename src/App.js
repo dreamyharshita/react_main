@@ -36,6 +36,7 @@ function expensedata(){
   const arr=[];
 for(let i=0;i<4;i++){
   
+  
  arr.push(<ExpenseItem title={expenses[i].title} amount={expenses[i].amount} date={expenses[i].date} location={expenses[i].Location}></ExpenseItem>);
 }
 return arr;
