@@ -1,4 +1,4 @@
-import ExpenseItem from './components/ExpenseItem';
+import ExpenseItem from './components/Expenses/ExpenseItem';
 
 const expenses = [
   {
@@ -32,7 +32,7 @@ const expenses = [
   },
 ];
 
-function expensedata(){
+const expensedata=()=>{
   const arr=[];
 for(let i=0;i<4;i++){
   
@@ -41,7 +41,7 @@ for(let i=0;i<4;i++){
 }
 return arr;
 }
-function App() {
+const App= () => {
   
   return (
     <div>
