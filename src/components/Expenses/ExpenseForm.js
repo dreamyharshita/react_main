@@ -4,25 +4,36 @@ import expenses from './Expenses';
 
 let title,amount,date,location;
 const ExpenseForm= () =>{
-    const [title,setTitle]=useState('');
-    const [amount,setAmount]=useState('');
-    const [date,setDate]=useState('');
-    const [location,setLocation]=useState('');
+   // const [title,setTitle]=useState('');
+   // const [amount,setAmount]=useState('');
+   // const [date,setDate]=useState('');
+   // const [location,setLocation]=useState('');
+   const [userInput,setUserInput]=useState({
+      title:'',
+      date:'',
+      location:'',
+      amount:''
+   })
     const TitleHandler=(e)=>{
-        setTitle(e.target.value); 
-       console.log(title);
+        setUserInput((prevState)=> {
+        return  {...prevState,title: e.target.value};
+      }); 
+      
     }
     const DateHandler=(e)=>{
-        setDate(e.target.value);
-        console.log(date);
+      setUserInput((prevState)=> {
+         return  {...prevState,date: e.target.value};
+       }); 
      }
      const AmountHandler=(e)=>{
-        setAmount(e.target.value);
-        console.log(amount);
+      setUserInput((prevState)=> {
+         return  {...prevState,amount: e.target.value};
+       }); 
      }
      const LocationHandler=(e)=>{
-        setLocation(e.target.value);
-        console.log(location);
+      setUserInput((prevState)=> {
+         return  {...prevState,location: e.target.value};
+       }); 
      }
     
   const AddExpense= () => {
