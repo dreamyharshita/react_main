@@ -1,13 +1,14 @@
-import ExpenseItem from './components/Expenses/ExpenseItem';
-import ExpenseForm from './components/Expenses/ExpenseForm';
+import React,{useState} from 'react';
+import NewExpense from './components/NewExpense/NewExpense';
+import Expenses from './components/Expenses/Expenses';
 
-const expenses = [
+let dummy_expenses = [
   {
     id: 'e1',
     title: 'Toilet Paper',
     amount: 94.12,
     date: new Date(2020, 7, 14),
-    Location: 'Delhi'
+    
   },
 
   { 
@@ -15,44 +16,43 @@ const expenses = [
    title: 'New TV', 
    amount: 799.49, 
    date: new Date(2021, 2, 12),
-   Location: 'Agra'
+   
   },
   {
     id: 'e3',
     title: 'Car Insurance',
     amount: 294.67,
     date: new Date(2021, 2, 28),
-    Location: 'Goa'
+    
   },
   {
     id: 'e4',
     title: 'New Desk (Wooden)',
     amount: 450,
     date: new Date(2021, 5, 12),
-    Location: 'Mumbai'
+    
   },
 ];
 
-const expensedata=()=>{
-  const arr=[];
-for(let i=0;i<4;i++){
-  
-  
- arr.push(<ExpenseItem title={expenses[i].title} amount={expenses[i].amount} date={expenses[i].date} location={expenses[i].Location}></ExpenseItem>);
-}
-return arr;
-}
 const App= () => {
+
+const [expenses,setExpenses]=useState(dummy_expenses);
+  
+
+  const addExpenseHandler =(expense)=>{
+    console.log(expense);
+    setExpenses([...expenses,expense]);
+  }
   
   return (
     <div>
-      <h2>Let's get started! </h2>
-      <ExpenseForm/>
-{expensedata()
-}
-
+      <NewExpense onAddExpense={addExpenseHandler} />
+    <Expenses item={expenses}/>
     </div>
   );
 
+
 }
+
+
 export default App;

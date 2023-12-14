@@ -7,12 +7,13 @@ import './ExpenseItem.css';
 
 
 const ExpenseItem= (props) => {
+  console.log("Item Added");
   const[title,setTitle]= useState(props.title);
   const[amount,setExpense]= useState(props.amount);
     return (       
         <Card className="expense-item" >
        <ExpenseDate date={props.date}/>
-        <ExpenseDetails title={title} location={props.location} amount={amount}/>
+        <ExpenseDetails title={title}  amount={amount}/>
                 
 <button onClick={()=>{
   setTitle('Updated!');
