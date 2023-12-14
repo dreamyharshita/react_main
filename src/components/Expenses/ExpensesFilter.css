@@ -1,0 +1,10 @@
+.filter__style{
+    height: 50px;
+    width: 20%;
+    background-color: powderblue;
+}
+.filter__heading{
+    color: black;
+    font-size: large;
+    font-weight: 1000;
+}
