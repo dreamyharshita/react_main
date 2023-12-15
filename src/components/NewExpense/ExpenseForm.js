@@ -52,7 +52,7 @@ const ExpenseForm= (props) =>{
     }
 
    
-    
+  
   const SubmitHandler= (event) => {
 event.preventDefault();
     
@@ -69,22 +69,28 @@ event.preventDefault();
    setDate('');
  
   };
+ 
+  
+     
+ 
     return(<div >
-        <form onSubmit={SubmitHandler} className='form_style'>
-        <label>Expense Title</label>
-        <input type="Text" onChange={TitleHandler} value={title}></input>
-        
-        <br/>
-        <label>Expense Amount</label>
-        
-        <input type="Number" min="0.01" step="0.01" onChange={AmountHandler} value={amount}></input>
-        <br/>
-        <label>Date</label>
-        <br/>
-        <input type="date" onChange={DateHandler} value={date} ></input>
-        <br/><br/>
-        <button type="submit" >Add Expense</button>
-        </form>
+      
+      <form onSubmit={SubmitHandler} className='form_style'>
+  <label>Expense Title</label>
+  <input type="Text" onChange={TitleHandler} value={title}></input>
+  
+  <br/>
+  <label>Expense Amount</label>
+  
+  <input type="Number" min="0.01" step="0.01" onChange={AmountHandler} value={amount}></input>
+  <br/>
+  <label>Date</label>
+  <br/>
+  <input type="date" onChange={DateHandler} value={date} ></input>
+  <br/><br/>
+  <button type="button" onClick={props.onCancel}>Cancel</button>
+  <button type="submit" >Add Expense</button>
+  </form>
     </div>
 
     );
